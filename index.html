@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Care by Suus – Zelfstandige Verzorgende IG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Care by Suus – zelfstandige Verzorgende IG met ervaring in thuiszorg, particuliere zorg, PGB en verzorgings- en verpleeghuizen. Warme, professionele en persoonlijke zorg op maat."
+  />
+  <style>
+    :root {
+      --bg: #f7f3ef;
+      --bg-light: #fdfbf9;
+      --accent: #c5b1a0;
+      --accent-dark: #9b8370;
+      --text: #463a32;
+      --muted: #7a6b61;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 243, 239, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e2d7cf;
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--accent-dark);
+    }
+
+    .logo-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 0.1rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent-dark);
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: center;
+      padding: 2rem 0 3rem;
+    }
+
+    .hero-badge {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.9rem, 3vw, 2.5rem);
+      margin-bottom: 0.5rem;
+      color: var(--accent-dark);
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 0.7rem 1.4rem;
+      font-size: 0.9rem;
+      border: 1px solid var(--accent);
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease,
+        box-shadow 0.2s ease, border-color 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fdfbf9;
+      border-color: var(--accent);
+      box-shadow: 0 10px 25px rgba(155, 131, 112, 0.18);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+      border-color: var(--accent-dark);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--accent-dark);
+    }
+
+    .btn-outline:hover {
+      background: var(--bg-light);
+    }
+
+    .hero-contacts {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .hero-card {
+      background: var(--bg-light);
+      border-radius: 1.25rem;
+      padding: 1.5rem 1.4rem;
+      border: 1px solid #e2d7cf;
+      box-shadow: 0 18px 35px rgba(155, 131, 112, 0.12);
+      font-size: 0.9rem;
+    }
+
+    .hero-card h2 {
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+      color: var(--accent-dark);
+    }
+
+    .hero-list {
+      list-style: none;
+      display: grid;
+      gap: 0.3rem;
+      margin-bottom: 1rem;
+      padding-left: 0;
+    }
+
+    .hero-list li::before {
+      content: "•";
+      color: var(--accent-dark);
+      margin-right: 0.4rem;
+    }
+
+    section {
+      padding: 2rem 0 0;
+    }
+
+    section h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+      color: var(--accent-dark);
+    }
+
+    .section-intro {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .two-cols {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.6rem;
+      align-items: flex-start;
+    }
+
+    .pill-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+      padding-left: 0;
+    }
+
+    .pill-list li {
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid #e2d7cf;
+      font-size: 0.8rem;
+      color: var(--muted);
+      background: #fffbf7;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--bg-light);
+      border-radius: 1rem;
+      padding: 1.2rem 1.1rem;
+      border: 1px solid #e2d7cf;
+      font-size: 0.9rem;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+      color: var(--accent-dark);
+    }
+
+    .tarief-bedrag {
+      font-weight: 600;
+      margin: 0.3rem 0;
+      color: var(--accent-dark);
+    }
+
+    .tarief-uitleg {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .contact-detail {
+      font-size: 0.95rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .contact-detail span {
+      font-weight: 600;
+      color: var(--accent-dark);
+    }
+
+    form {
+      background: var(--bg-light);
+      border-radius: 1rem;
+      padding: 1.2rem 1.1rem;
+      border: 1px solid #e2d7cf;
+      font-size: 0.9rem;
+    }
+
+    .form-row {
+      margin-bottom: 0.8rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.8rem;
+      margin-bottom: 0.25rem;
+      color: var(--muted);
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.55rem 0.7rem;
+      border-radius: 0.5rem;
+      border: 1px solid #e0d5cd;
+      font-family: inherit;
+      font-size: 0.9rem;
+      background: #fffcfa;
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(197, 177, 160, 0.25);
+    }
+
+    footer {
+      max-width: 1100px;
+      margin: 2.5rem auto 1.5rem;
+      padding: 1rem 1.5rem 0;
+      border-top: 1px solid #e2d7cf;
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .two-cols,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      header {
+        position: static;
+      }
+
+      main {
+        padding-top: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="logo">
+        <div class="logo-icon">♥</div>
+        <div>Care by Suus</div>
+      </div>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#over">Over Suus</a>
+        <a href="#diensten">Diensten</a>
+        <a href="#tarieven">Tarieven</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div>
+        <div class="hero-badge">Zelfstandige Verzorgende IG</div>
+        <h1>Ervaring in thuiszorg, particuliere zorg, PGB én verzorgingshuizen & verpleeghuizen.</h1>
+        <div class="hero-subtitle">
+          Warme, professionele en persoonlijke zorg op maat – afgestemd op wat u écht nodig heeft.
+        </div>
+        <p>
+          Ik bied rustige, betrokken en betrouwbare zorg, met aandacht voor de mens achter de zorgvraag.
+          Altijd met één vast aanspreekpunt: Suus.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Bel of mail mij direct</a>
+          <a href="#tarieven" class="btn btn-outline">Bekijk tarieven</a>
+        </div>
+
+        <div class="hero-contacts">
+          📞 <strong>06 8786 9981</strong><br />
+          ✉️ <strong>carebysuus@outlook.com</strong>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <h2>Diensten</h2>
+        <ul class="hero-list">
+          <li>Persoonlijke verzorging (ADL)</li>
+          <li>Begeleiding & structuur</li>
+          <li>Particuliere zorg & PGB-zorg</li>
+          <li>Nachtzorg (slaap & waak)</li>
+          <li>24-uurs zorg</li>
+        </ul>
+        <p class="tarief-uitleg">
+          Samen bekijken we rustig wat het beste aansluit bij uw wensen en situatie.
+        </p>
+      </aside>
+    </section>
+
+    <!-- OVER SUUS -->
+    <section id="over">
+      <h2>Over Suus</h2>
+      <div class="two-cols">
+        <div>
+          <p class="section-intro">
+            Mijn naam is <strong>Susannah (“Suus”)</strong>, gediplomeerd
+            <strong>Verzorgende IG</strong> en eigenaar van Care by Suus.
+          </p>
+          <p>
+            Jarenlang heb ik gewerkt binnen de thuiszorg, verzorgingshuizen en
+            verpleeghuizen. Ik weet hoe belangrijk het is dat iemand niet alleen
+            de zorgvraag ziet, maar ook de persoon daarachter – met zijn of haar
+            verhaal, gewoonten en wensen.
+          </p>
+          <p>
+            Met Care by Suus kies ik bewust voor kleinschaligheid. Ik werk
+            zelfstandig, zonder groot team, zodat u altijd weet wie er komt.
+            Zorg hoort rustig, vertrouwd en warm te zijn – niet gehaast.
+          </p>
+          <p>
+            Ik bied <strong>particuliere zorg</strong> en
+            <strong>PGB-zorg</strong>, en sluit aan bij wat u zelf, uw familie
+            en eventueel andere zorgorganisaties al doen.
+          </p>
+        </div>
+        <div>
+          <p><strong>Waar ik voor sta:</strong></p>
+          <ul class="pill-list">
+            <li>Rust & aandacht</li>
+            <li>Respect voor gewoonten & waarden</li>
+            <li>Betrouwbaarheid & duidelijkheid</li>
+            <li>Cliënt bepaalt het tempo</li>
+            <li>Humor en gezelligheid als het kan</li>
+            <li>Zorg zoals ik die mijn eigen familie gun</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIENSTEN -->
+    <section id="diensten">
+      <h2>Diensten</h2>
+      <p class="section-intro">
+        Alle zorg wordt in overleg afgestemd. Hieronder een overzicht van wat
+        ik onder andere kan bieden.
+      </p>
+      <div class="cards">
+        <div class="card">
+          <h3>Persoonlijke verzorging (ADL)</h3>
+          <p>
+            Ondersteuning bij het dagelijks leven, op een rustige en respectvolle manier.
+          </p>
+          <ul class="hero-list">
+            <li>Wassen en douchen</li>
+            <li>Aankleden en uitkleden</li>
+            <li>Mobiliteit en transfers</li>
+            <li>Eten, drinken & medicatie aanreiken</li>
+            <li>Structuur in de dag</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Begeleiding & welzijn</h3>
+          <p>
+            Aandacht voor de mens, niet alleen de zorg. Fijn voor cliënten én familie.
+          </p>
+          <ul class="hero-list">
+            <li>Gezelschap en een luisterend oor</li>
+            <li>Wandelen of kleine uitstapjes</li>
+            <li>Boodschappen of samen koken</li>
+            <li>Dagstructuur en activering</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Nachtzorg (slaap & waak)</h3>
+          <p>
+            Voor situaties waarin het ’s nachts niet veilig of prettig voelt om alleen te zijn.
+          </p>
+          <ul class="hero-list">
+            <li>Slaapnacht – aanwezig in huis, oproepbaar</li>
+            <li>Waaknacht – continu alert en beschikbaar</li>
+            <li>Extra ondersteuning bij onrust of onveilig gevoel</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>24-uurs zorg</h3>
+          <p>
+            Intensieve zorg en begeleiding verspreid over de dag en nacht, met één vast gezicht.
+          </p>
+          <ul class="hero-list">
+            <li>Beschikbaarheid over 24 uur</li>
+            <li>Combinatie van verzorging, begeleiding en toezicht</li>
+            <li>Rust en continuïteit voor cliënt en familie</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TARIEVEN -->
+    <section id="tarieven">
+      <h2>Tarieven</h2>
+      <p class="section-intro">
+        Onderstaande tarieven zijn indicatief. In een vrijblijvend gesprek
+        stemmen we samen af wat passend is bij de zorgvraag en situatie.
+      </p>
+      <div class="cards">
+        <div class="card">
+          <h3>Persoonlijke verzorging / begeleiding</h3>
+          <p class="tarief-bedrag">€ 40 – € 48 per uur</p>
+          <p class="tarief-uitleg">
+            Afhankelijk van zorgzwaarte, aantal handelingen, tijdstip (overdag/
+            avond/weekend) en eventuele reistijd.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>24-uurs zorg</h3>
+          <p class="tarief-bedrag">€ 450 – € 500 per 24 uur</p>
+          <p class="tarief-uitleg">
+            Het tarief hangt af van de complexiteit van de zorg, de mate van
+            zelfstandigheid en de belasting in de nacht.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Nachtzorg – slaapnacht</h3>
+          <p class="tarief-bedrag">€ 300 – € 350 per nacht</p>
+          <p class="tarief-uitleg">
+            Ik ben aanwezig in huis en oproepbaar. Het tarief verschilt per
+            duur van de nacht, frequentie van oproepen en mobiliteit van de cliënt.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Nachtzorg – waaknacht</h3>
+          <p class="tarief-bedrag">€ 350 – € 400 per nacht</p>
+          <p class="tarief-uitleg">
+            Ik blijf de hele nacht actief in de buurt van de cliënt. Het
+            tarief hangt af van zorgzwaarte en de mate van continue alertheid.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>PGB & particuliere zorg</h3>
+          <p class="tarief-uitleg">
+            Zorg kan vergoed worden vanuit een
+            <strong>PGB</strong> of particulier worden ingekocht. Ik denk graag
+            mee over wat mogelijk is en kan helpen met:
+          </p>
+          <ul class="hero-list">
+            <li>Meedenken over PGB-mogelijkheden</li>
+            <li>Uitleg over zorgovereenkomsten</li>
+            <li>Ondersteuning bij declaraties en urenregistratie</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="section-intro" style="margin-top: 1.5rem;">
+        <strong>Als iemand vraagt: “Waarom zitten er verschillen in de tarieven?”</strong><br />
+        Een passend antwoord is bijvoorbeeld:<br />
+        <em>
+          “Het verschil in tarief hangt af van de zorgzwaarte, het aantal
+          handelingen, de mobiliteit van de cliënt en of er extra toezicht of
+          complexe zorg nodig is. Ik bespreek dit altijd vooraf helder, zodat u
+          precies weet waar u aan toe bent.”
+        </em>
+      </p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact-grid">
+        <div>
+          <p class="section-intro">
+            Wilt u meer weten, tarieven bespreken of de mogelijkheden verkennen?
+            Neem gerust contact met mij op. Ik denk graag met u mee.
+          </p>
+          <p class="contact-detail">
+            <span>Telefoon:</span> 06 8786 9981
+          </p>
+          <p class="contact-detail">
+            <span>E-mail:</span> carebysuus@outlook.com
+          </p>
+          <p class="contact-detail">
+            <span>Naam praktijk:</span> Care by Suus
+          </p>
+          <p class="contact-detail">
+            Regio: Noord-Holland en omgeving (in overleg ook daarbuiten mogelijk).
+          </p>
+        </div>
+
+        <form>
+          <div class="form-row">
+            <label for="naam">Naam</label>
+            <input id="naam" type="text" name="naam" placeholder="Uw naam" />
+          </div>
+          <div class="form-row">
+            <label for="email">E-mail</label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="uw@emailadres.nl"
+            />
+          </div>
+          <div class="form-row">
+            <label for="telefoon">Telefoonnummer</label>
+            <input
+              id="telefoon"
+              type="tel"
+              name="telefoon"
+              placeholder="Bijvoorbeeld: 06 12345678"
+            />
+          </div>
+          <div class="form-row">
+            <label for="bericht">Bericht</label>
+            <textarea
+              id="bericht"
+              name="bericht"
+              placeholder="Waar kan ik u bij helpen?"
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            Bericht verzenden
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>© <span id="jaar"></span> Care by Suus – Alle rechten voorbehouden.</div>
+    <div>Zelfstandige Verzorgende IG • Particuliere zorg & PGB-zorg</div>
+  </footer>
+
+  <script>
+    // huidig jaar automatisch invullen
+    document.getElementById("jaar").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
